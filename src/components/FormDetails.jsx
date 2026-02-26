@@ -1,8 +1,7 @@
-import { Close } from "../assets/icons/Close";
 export default function FormDetails({ values, setIsSuccess }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60">
-      <div className="bg-white w-full max-w-lg flex flex-col max-h-[90vh] overflow-hidden animate-in fade-in zoom-in duration-300">
+      <div className="bg-white w-full rounded-lg max-w-lg flex flex-col max-h-[90vh] overflow-hidden animate-in fade-in zoom-in duration-300">
         <div className="bg-[#2D767F] p-5 sm:p-6 text-white text-center flex-shrink-0 text-md">
           <p>Submission Successful</p>
           <p>Your details:</p>
@@ -12,7 +11,7 @@ export default function FormDetails({ values, setIsSuccess }) {
           <div className="space-y-5">
             {/* Profile Photo Preview */}
             {values.photo && (
-              <div className="flex items-center gap-4 p-3 bg-gray-50 border border-gray-100">
+              <div className="flex items-center gap-4 p-3 bg-gray-50 border rounded-lg border-gray-100">
                 <img
                   src={URL.createObjectURL(values.photo)}
                   alt="Profile"
@@ -51,7 +50,7 @@ export default function FormDetails({ values, setIsSuccess }) {
         <div className="p-4 flex justify-end sm:justify-start flex-shrink-0">
           <button
             onClick={() => setIsSuccess(false)}
-            className="w-full sm:w-auto bg-[#2D767F] text-white px-8 py-2.5 text-sm font-bold hover:bg-[#1f565d] transition-all"
+            className="w-full sm:w-auto bg-[#2D767F] rounded-lg text-white px-8 py-2.5 text-sm font-bold hover:bg-[#1f565d] transition-all"
           >
             Close
           </button>

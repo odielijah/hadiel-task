@@ -45,7 +45,7 @@ export default function Enrolment() {
   return (
     <section className="lg:p-8 p-4 overflow-y-auto lato-regular">
       {/* Success Modal / Summary */}
-      {isSuccess && <FormDetails values={values}/>}
+      {isSuccess && <FormDetails values={values} setIsSuccess={setIsSuccess} />}
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 min-h-[500px]">
         <div className="flex text-sm gap-3 mb-5">
