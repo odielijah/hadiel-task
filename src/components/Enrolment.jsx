@@ -2,6 +2,7 @@ import { personalDetails } from "../data/enrolmentForm";
 import { FileImage } from "../assets/icons/FileImage";
 import { ArrowDown } from "../assets/icons/ArrowDown";
 import { useState, useRef } from "react";
+import FormDetails from "./FormDetails";
 
 export default function Enrolment() {
   const fileInputRef = useRef(null);
@@ -26,9 +27,7 @@ export default function Enrolment() {
 
   const handleSubmit = (e) => {
     e.preventDefault(e);
-    console.log(values);
     setIsSuccess(true);
-    setTimeout(() => setIsSuccess(false), 4000);
   };
 
   // Functions for the image input
@@ -45,17 +44,8 @@ export default function Enrolment() {
 
   return (
     <section className="lg:p-8 p-4 overflow-y-auto lato-regular">
-      {/* Notification */}
-      {isSuccess && (
-        <div className="fixed lato-regular top-8 md:top-10 left-1/2 -translate-x-1/2 z-50 w-full mx-auto max-w-[270px]">
-          <div className="bg-[#2D767F] text-white px-4 py-4 rounded-2xl shadow-2xl flex justify-center lg:justify-start items-center gap-4 border border-white/20 backdrop-blur-md">
-            <div className="text-[14px]">
-              <p>We have received your form.</p>
-              <p>Check your details in the console.</p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Success Modal / Summary */}
+      {isSuccess && <FormDetails values={values}/>}
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 min-h-[500px]">
         <div className="flex text-sm gap-3 mb-5">
@@ -101,6 +91,7 @@ export default function Enrolment() {
                   <input
                     type="file"
                     ref={fileInputRef}
+                    required
                     onChange={handleFileChange}
                     className="hidden"
                     accept="image/*"
