@@ -32,7 +32,6 @@ export const personalDetails = [
     label: "Email Address",
     type: "email",
     placeholder: "Enter email address",
-    pattern: "[a-z0-9._%\\+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$",
   },
   {
     id: "dob",
